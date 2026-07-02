@@ -1,0 +1,98 @@
+Welcome to QMK MSYS!
+  * Documentation:    https://docs.qmk.fm
+  * Support:          https://discord.gg/qmk
+
+If you have not already done so,
+  run qmk setup to get started.
+  run qmk compile -kb <keyboard> -km default to start building.
+  run qmk config user.hide_welcome=True to hide this message.
+[Alex AN515-53@Alex-AN515-53 ~]$ git clone https://github.com/vial-kb/vial-qmk
+Cloning into 'vial-qmk'...
+remote: Enumerating objects: 594132, done.
+remote: Counting objects: 100% (55045/55045), done.
+remote: Compressing objects: 100% (5632/5632), done.
+remote: Total 594132 (delta 50850), reused 49413 (delta 49413), pack-reused 539087 (from 1)
+Receiving objects: 100% (594132/594132), 266.29 MiB | 21.49 MiB/s, done.
+Resolving deltas: 100% (327477/327477), done.
+Updating files: 100% (25490/25490), done.
+[Alex AN515-53@Alex-AN515-53 ~]$ cd vial-qmk
+[Alex AN515-53@Alex-AN515-53 vial-qmk]$ qmk setup
+Ψ Found qmk_firmware at C:/Users/Alex AN515-53/vial-qmk.
+What do you want to do?
+        1. Delete and reclone qmk/qmk_firmware
+        2. Delete and clone a different fork
+        3. Keep it and continue
+Please enter your choice: [3] 3
+Ψ QMK Doctor is checking your environment.
+Ψ CLI version: 1.2.0
+Ψ QMK home: C:/Users/Alex AN515-53/vial-qmk
+Ψ Detected Windows 10 (10.0.19045).
+Ψ QMK MSYS version: 1.12.0
+Ψ Userspace enabled: False
+Ψ Git branch: vial
+⚠ The official repository does not seem to be configured as git remote "upstream".
+Ψ All dependencies are installed.
+Ψ Found arm-none-eabi-gcc version 15.2.0
+Ψ Successfully compiled using arm-none-eabi-gcc
+Ψ Successfully tested arm-none-eabi-binutils using arm-none-eabi-size
+Ψ Found avr-gcc version 15.2.0
+Ψ Successfully compiled using avr-gcc
+Ψ Successfully tested avr-binutils using avr-size
+Ψ Found avrdude version t
+Ψ Found dfu-programmer version 1.1.0
+Ψ Found dfu-util version 0.11-dev
+Would you like to clone the submodules? [Y/n] y
+Ψ Submodule status:
+Ψ - lib/chibios: 2025-05-15 08:25:11 +0000 --  (8bd61b8043)
+Ψ - lib/chibios-contrib: 2025-01-08 21:03:31 +0100 --  (3ac181e4)
+Ψ - lib/googletest: 2021-06-11 06:37:43 -0700 --  (e2239ee6)
+Ψ - lib/lufa: 2022-08-26 12:09:55 +1000 --  (549b97320)
+Ψ - lib/vusb: 2022-06-13 09:18:17 +1000 --  (819dbc1)
+Ψ - lib/printf: 2022-06-29 23:59:58 +0300 --  (c2e3b4e)
+Ψ - lib/pico-sdk: 2025-04-20 21:24:29 +1000 --  (d0c5cac)
+Ψ - lib/lvgl: 2022-04-11 04:44:53 -0600 --  (e19410f8)
+Ψ QMK is ready to go, but minor problems were found
+[Alex AN515-53@Alex-AN515-53 vial-qmk]$ qmk flash -kb rgbmatrixc75 -km vial
+Ψ Compiling keymap with make -r -R -f builddefs/build_keyboard.mk -s flash KEYBOARD=rgbmatrixc75 KEYMAP=vial KEYBOARD_FILESAFE=rgbmatrixc75 TARGET=rgbmatrixc75_vial VERBOSE=false COLOR=true SILENT=false QMK_BIN="qmk"
+
+
+Generating: .build/obj_rgbmatrixc75_vial/src/info_deps.d                                            [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/community_modules.c                                    [OK]
+arm-none-eabi-gcc.exe (crosstool-NG 1.27.0.82_7f9d704 - qmk/qmk_toolchains @ a55a2b0) 15.2.0
+Copyright (C) 2025 Free Software Foundation, Inc.
+This is free software; see the source for copying conditions.  There is NO
+warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+
+Generating: .build/obj_rgbmatrixc75_vial/src/community_modules.h                                    [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/community_modules_introspection.c                      [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/community_modules_introspection.h                      [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/led_matrix_community_modules.inc                       [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/rgb_matrix_community_modules.inc                       [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/info_config.h                                          [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/default_keyboard.c                                     [OK]
+Generating: .build/obj_rgbmatrixc75_vial/src/default_keyboard.h                                     [OK]
+Compiling: .build/obj_rgbmatrixc75_vial/src/community_modules.c                                     [OK]
+Compiling: .build/obj_rgbmatrixc75_vial/src/default_keyboard.c                                     In file included from ./lib/chibios/os/hal/include/hal.h:32,
+                 from platforms/chibios/platform_deps.h:18,
+                 from quantum/quantum.h:18,
+                 from ./.build/obj_rgbmatrixc75_vial/src/default_keyboard.h:28,
+                 from .build/obj_rgbmatrixc75_vial/src/default_keyboard.c:26:
+keyboards/rgbmatrixc75/halconf.h:5:9: error: 'HAL_USE_PWM' redefined [-Werror]
+    5 | #define HAL_USE_PWM TRUE
+      |         ^~~~~~~~~~~
+In file included from keyboards/rgbmatrixc75/halconf.h:3:
+./platforms/chibios/boards/common/configs/halconf.h:124:9: note: this is the location of the previous definition
+  124 | #define HAL_USE_PWM                         FALSE
+      |         ^~~~~~~~~~~
+In file included from ./lib/chibios/os/hal/include/hal_pwm.h:92,
+                 from ./lib/chibios/os/hal/include/hal.h:317:
+./lib/chibios/os/hal/ports/STM32/LLD/TIMv1/hal_pwm_lld.h:528:2: error: #error "PWM driver activated but no TIM peripheral assigned"
+  528 | #error "PWM driver activated but no TIM peripheral assigned"
+      |  ^~~~~
+cc1.exe: all warnings being treated as errors
+ [ERRORS]
+ |
+ |
+ |
+make: *** [builddefs/common_rules.mk:365: .build/obj_rgbmatrixc75_vial/.build/obj_rgbmatrixc75_vial/src/default_keyboard.o] Error 1
+[Alex AN515-53@Alex-AN515-53 vial-qmk]$

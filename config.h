@@ -1,6 +1,5 @@
 #pragma once
 
-//zvecr
 #define WS2812_PWM_DRIVER PWMD15
 #define WS2812_PWM_CHANNEL 1
 #define WS2812_PWM_PAL_MODE 1
