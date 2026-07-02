@@ -28,7 +28,8 @@
     },
 
     "ws2812": {
-        "pin": "B14"
+        "pin": "B14",
+        "driver": "pwm"
     },
     "rgb_matrix": {
         "driver": "ws2812",
